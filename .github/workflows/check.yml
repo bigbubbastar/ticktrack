@@ -2,7 +2,9 @@ name: Check Sedaris tickets
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    # Runs at 8am, 2pm, 8pm CDT (UTC-5). When DST ends in Nov, these shift to 7am, 1pm, 7pm CST.
+    # Adjust to '0 14,20,2 * * *' if you want to keep 8am/2pm/8pm CST in winter.
+    - cron: '0 13,19,1 * * *'
   workflow_dispatch:
 
 jobs:
